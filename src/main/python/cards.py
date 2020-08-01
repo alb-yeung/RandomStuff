@@ -69,7 +69,7 @@ def passCards():
             if currentValue < currentPlayerHand[curMinIndex][1]:
                 curMinIndex = handIndex
         cardsToPass.append(currentPlayerHand.pop(curMinIndex))
-    cardsToPass.append(cardsToPass.pop())
+    cardsToPass.append(cardsToPass.pop(0))
     for index in range(0, len(players.keys())):
         playerName = players.keys()[index]
         players[playerName].append(cardsToPass[index])
