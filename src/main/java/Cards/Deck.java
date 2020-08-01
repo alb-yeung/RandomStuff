@@ -12,6 +12,9 @@ import java.util.List;
 public class Deck {
     private List<Card> deck;
 
+    /**
+     * Resets the deck to a state with every card in it, fairly ordered
+     */
     public void reset() {
         deck = new ArrayList<>();
         for (Card.Suit suit : Card.LIST_OF_SUITS) {
@@ -21,10 +24,16 @@ public class Deck {
         }
     }
 
+    /**
+     * Simple built in Java shuffle
+     */
     public void shuffle() {
         Collections.shuffle(deck);
     }
 
+    /**
+     * Pop off top of the deck and return it
+     */
     public Card deal() {
         Card temp = deck.get(0);
         deck.remove(0);
